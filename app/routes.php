@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/{name?}', function($name="yzhou")
 {
-	return View::make('hello');
+	$hi = '你好';
+	$object = $name;
+	$data = array('hi'=>$hi, 'object'=>$object);
+	return View::make('home.index', $data);
 });
